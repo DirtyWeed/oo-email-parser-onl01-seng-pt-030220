@@ -1,11 +1,14 @@
 class EmailAddressParser
-  attr_accessor :address
+  attr_accessor :email
   
-  initialize(email_addresses)
-  email_addresses = "john@doe.com, person@somewhere.org"
-  parser = EmailAddressParser.new(email_addresses)
-  
-  
-  
-  
+  def initialize(emails)
+    @email = emails
+  end
+
+  def parse
+    email_array = @email.split(/[, ]/).uniq
+    email_array.reject! {|element| element.empty?}
+    email_array
+  end
+
 end
