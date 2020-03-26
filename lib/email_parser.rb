@@ -1,5 +1,5 @@
 class EmailAddressParser
-  attr_accessor :
+  attr_accessor :address
   
   initialize(email_addresses)
   email_addresses = "john@doe.com, person@somewhere.org"
